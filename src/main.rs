@@ -9,7 +9,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .with_env_filter(EnvFilter::from_default_env())
         .init();
 
-    let addr: SocketAddr = ([127, 0, 0, 1], 3000).into();
+    let addr: SocketAddr = ([0, 0, 0, 0], 3000).into();
     let routes = warp::get()
         .and(warp::path::full())
         .and(rdir::conditionals())

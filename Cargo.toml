@@ -1,0 +1,22 @@
+[package]
+name = "rdir"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bytes = "1.4.0"
+futures = "0.3.28"
+headers = "0.3.8"
+mime_guess = "2.0.4"
+tokio = { version = "1.28.2", features = ["full"] }
+tokio-util = "0.7.8"
+tracing = "0.1.37"
+tracing-subscriber = { version = "0.3.17", features = ["env-filter"] }
+warp = "0.3.5"
+
+[profile.release]
+strip = true
+lto = true
+opt-level = 'z'
